@@ -1,0 +1,106 @@
+/* ===== Language Switcher Styles ===== */
+
+.lang-switcher {
+    margin-left: 8px;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-text);
+    transform: translateY(-2px);
+}
+
+.lang-flag {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.lang-text {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile styles for language switcher */
+@media (max-width: 768px) {
+    .lang-switcher {
+        margin-left: 0;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--glass-border);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .lang-btn {
+        padding: 12px 24px;
+        width: auto;
+        justify-content: center;
+    }
+}
+
+/* Japanese font support */
+html[lang="ja"] body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+}
+
+html[lang="ja"] .hero-title,
+html[lang="ja"] .section-title,
+html[lang="ja"] .contact-title,
+html[lang="ja"] h3 {
+    font-family: 'Noto Sans JP', 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
+html[lang="ja"] .hero-name {
+    letter-spacing: 0.05em;
+}
+
+html[lang="ja"] .hero-highlight {
+    letter-spacing: 0.02em;
+}
+
+/* Adjust Japanese text spacing */
+html[lang="ja"] p {
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+}
+
+html[lang="ja"] .hero-description {
+    line-height: 1.9;
+}
+
+html[lang="ja"] .about-lead {
+    line-height: 1.9;
+}
+
+/* Card adjustments for Japanese text */
+html[lang="ja"] .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+html[lang="ja"] .portfolio-overlay p {
+    line-height: 1.6;
+}
+
+html[lang="ja"] .timeline-content p {
+    line-height: 1.7;
+}
