@@ -9,17 +9,26 @@
     <meta name="keywords" content="日本語翻訳者, ゲームローカライズ, LQA, ゲーム翻訳, フリーランス翻訳者, 英語から日本語">
     <title>佐伯直哉 | ゲーム翻訳者・ローカライズスペシャリスト</title>
 
-    <!-- Security Meta Tags -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Security: Content-Security-Policy.
+         Delivered via <meta> because GitHub Pages cannot set real HTTP response headers.
+         NOTE: frame-ancestors, report-uri and sandbox are IGNORED in a meta-delivered CSP
+         (see _headers for header-based enforcement, e.g. Netlify/Cloudflare/proxy). -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self';">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+    <!-- Referrer-Policy is honoured when set via meta. -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- nosniff / Permissions-Policy are only fully enforced as real HTTP headers (see _headers);
+         kept here as defense-in-depth for the user agents that honour them. -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), interest-cohort=()">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: Subresource Integrity (SRI) is intentionally NOT applied here.
+         The css2 endpoint returns UA-specific CSS (see its `Vary` header), so any fixed
+         sha384 hash would break rendering on browsers that receive a different response.
+         The response is locked to https://fonts.googleapis.com by the CSP style-src above.
+         To gain SRI + drop the third party entirely, self-host the fonts (see SECURITY.md). -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">

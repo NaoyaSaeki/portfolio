@@ -95,24 +95,13 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== Typing Effect for Hero (Optional Enhancement) =====
+// ===== Subtle Pulse Animation for Hero =====
+// The `pulse` keyframes live in index.css so no inline <style> is injected,
+// which lets the Content-Security-Policy omit 'unsafe-inline' for style-src.
 const heroHighlight = document.querySelector('.hero-highlight');
-const originalText = heroHighlight.textContent;
-
-// Add a subtle pulse animation to the hero
-heroHighlight.style.animation = 'pulse 3s ease-in-out infinite';
-
-// Add CSS for pulse animation dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.8; }
-    }
-`;
-document.head.appendChild(style);
-
-console.log('🎮 Portfolio website loaded successfully!');
+if (heroHighlight) {
+    heroHighlight.style.animation = 'pulse 3s ease-in-out infinite';
+}
 
 // ===== Portfolio Accordion =====
 const accordionHeaders = document.querySelectorAll('.accordion-header');
