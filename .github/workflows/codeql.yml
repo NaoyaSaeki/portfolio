@@ -27,7 +27,7 @@ jobs:
 
       - name: Initialize CodeQL
         # github/codeql-action@v3.29.0
-        uses: github/codeql-action/init@ce28f5bb42b7a9f2c824e633a3f6ee835bab6858
+        uses: github/codeql-action/init@99df26d4f13ea111d4ec1a7dddef6063f76b97e9
         with:
           languages: javascript-typescript
           queries: security-and-quality
