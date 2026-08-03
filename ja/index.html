@@ -11,10 +11,12 @@
 
     <!-- Security: Content-Security-Policy.
          Delivered via <meta> because GitHub Pages cannot set real HTTP response headers.
-         NOTE: frame-ancestors, report-uri and sandbox are IGNORED in a meta-delivered CSP
-         (see _headers for header-based enforcement, e.g. Netlify/Cloudflare/proxy). -->
+         NOTE: frame-ancestors, report-uri and sandbox are IGNORED in a meta-delivered CSP,
+         so frame-ancestors is intentionally OMITTED here (it only emitted a console error).
+         Clickjacking protection is enforced via _headers (frame-ancestors + X-Frame-Options)
+         when served behind a real-header host, e.g. Netlify/Cloudflare/proxy. -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <!-- Referrer-Policy is honoured when set via meta. -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <!-- nosniff / Permissions-Policy are only fully enforced as real HTTP headers (see _headers);
